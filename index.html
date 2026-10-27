@@ -203,14 +203,14 @@ header p {
 
 
 /* =====================================================
-   FICHE
+   FICHE affichage photo, nom, adresse
    ===================================================== */
 
 .fiche {
-    width: 400px;
+    width: 300px;
     min-height: 480px;
 
-    padding: 35px;
+    padding: 10px;
 
     background: #d9d9d9;
 
@@ -228,7 +228,7 @@ header p {
 }
 
 .fiche .secteur {
-    margin-bottom: 35px;
+    margin-bottom: 10px;
     font-size: 18px;
     font-style: italic;
 }
@@ -245,14 +245,15 @@ header p {
 .message {
     margin-top: 50px;
 }
-/////////////********
 .referent{
     text-align:center;
 }
-
+/* =====================================================
+   reduction des photos
+   ===================================================== */
 .referent img{
-    width:180px;
-    height:180px;
+    width:200px;
+    height:200px;
     object-fit:cover;
     border-radius:50%;
     margin-bottom:15px;
@@ -266,36 +267,101 @@ header p {
 }
 
 .referent a{
-    color:#222;
+    display:block;
+    margin-top:15px;
+    padding:12px;
+    background:#ffffff;
+    border-radius:8px;
+    color:#205ba4;
     font-weight:bold;
     text-decoration:none;
+    text-align:center;
+    word-break:break-word;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
 }
 
 .referent a:hover{
     text-decoration:underline;
 }
+/* =====================================================
+   bandeau droit
+   ===================================================== */
+   
+   .bandeau-secteurs{
+    width:420px;
+    max-width:90vw;
+}
+   /* =====================================================
+   BANDEAU SECTEURS
+   ===================================================== */
 
+.bandeau-secteurs{
+    width:220px;
+    flex-shrink:0;
+    background:#ffffff;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    font-size:14px;
+    line-height:1.4;
+}
+
+.bandeau-secteurs h3{
+    margin-top:0;
+    color:#205ba4;
+    border-bottom:2px solid #205ba4;
+    padding-bottom:10px;
+}
+
+.bandeau-item{
+    margin-bottom:15px;
+    padding-bottom:12px;
+    border-bottom:1px solid #ddd;
+}
+
+.bandeau-item a{
+    display:block;
+    color:#205ba4;
+    text-decoration:none;
+
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    line-height:1.4;
+}
+
+.bandeau-item a:hover{
+    text-decoration:underline;
+}
+``
+   
 /* =====================================================
    MOBILE
    ===================================================== */
 
-@media (max-width: 850px) {
+@media (max-width:850px){
 
-    .carte-container {
-        flex-direction: column;
-        margin: 10px auto;
-        padding: 10px;
-        gap: 20px;
+    .carte-container{
+        flex-direction:column;
+        margin:10px auto;
+        padding:10px;
+        gap:20px;
     }
 
-    .carte,
-    .fiche {
-        width: 100%;
-        max-width: 700px;
+    .carte{
+        width:100%;
+        max-width:100%;
     }
 
-    .fiche {
-        min-height: auto;
+    .fiche{
+        width:95%;
+        max-width:500px;
+        min-height:auto;
+        padding:20px;
+    }
+
+    .referent img{
+        width:90px;
+        height:90px;
     }
 }
 
@@ -578,8 +644,62 @@ Vous souhaitez prendre contact avec votre référent de quartier ? Trouvez leur 
 
 </section>
 
+<aside class="bandeau-secteurs">
+
+    <h3>Comptes Secteurs</h3>
+
+    <div class="bandeau-item">
+        <strong>Secteur 1 (Tréhiguier)</strong><br>
+        <a href="mailto:Referentsecteur1.Trehiguier@gmail.com">
+        Referentsecteur1.Trehiguier@gmail.com
+        </a><br>
+        Albert‑Jacques Lebreu
+    </div>
+
+    <div class="bandeau-item">
+        <strong>Secteur 2 (Centre Bourg)</strong><br>
+        <a href="mailto:Referentsecteur2.Centre.bourg@gmail.com">
+        Referentsecteur2.Centre.bourg@gmail.com
+        </a><br>
+        Albert‑Jacques Lebreu
+    </div>
+
+    <div class="bandeau-item">
+        <strong>Secteur 3 (Haut Pénestin)</strong><br>
+        <a href="mailto:Referentsecteur3.Haut.Penestin@gmail.com">
+        Referentsecteur3.Haut.Penestin@gmail.com
+        </a><br>
+        Albert‑Jacques Lebreu
+    </div>
+
+    <div class="bandeau-item">
+        <strong>Secteur 4 (Poudrantais)</strong><br>
+        <a href="mailto:Referentsecteur4.Poudrantais@gmail.com">
+        Referentsecteur4.Poudrantais@gmail.com
+        </a><br>
+        Albert‑Jacques Lebreu
+    </div>
+
+    <div class="bandeau-item">
+        <strong>Secteur 5 (Kerseguin-Loscolo)</strong><br>
+        <a href="mailto:Referentsecteur5.Kerseguin.Loscolo@gmail.com">
+        Referentsecteur5.Kerseguin.Loscolo@gmail.com
+        </a><br>
+        Albert‑Jacques Lebreu
+    </div>
+
+    <div class="bandeau-item">
+        <strong>Secteur 6 (Val-Couarne)</strong><br>
+        <a href="mailto:Referentsecteur6.Val-Couarne@gmail.com">
+        Referentsecteur6.Val-Couarne@gmail.com
+        </a><br>
+        Albert‑Jacques Lebreu
+    </div>
+
+</aside>
 
 </main>
+
 
 
 <script>
@@ -589,14 +709,13 @@ Vous souhaitez prendre contact avec votre référent de quartier ? Trouvez leur 
    ===================================================== */
 
 const secteurs = {
-//////////////*********
     1: {
     titre: "Secteur 1",
     nom: "Tréhiguier",
     couleur: "#f28530",
     contenu: `
         <div class="referent">
-            <img src="b.png" alt="a">
+            <img src="b.png" alt="Noël Joly">
               <h2>Noël Joly</h2>
             <p>
                 <a href="mailto:Referentsecteur1.Trehiguier@gmail.com">
@@ -613,9 +732,10 @@ const secteurs = {
     couleur: "#40b150",
     contenu: `
         <div class="referent">
-            <img src="a.png" alt="a">
-              <h2>Noël Joly</h2>            
-              <img src="b.png" alt="b">
+            <img src="a.png" alt="Noël Joly">
+              <h2>Noël Joly</h2>
+          
+              <img src="b.png" alt="Noël Joly">
               <h2>Noël Joly</h2>
             <p>
                 <a href="mailto:Referentsecteur2.Centre.bourg@gmail.com">
@@ -631,7 +751,7 @@ const secteurs = {
     couleur: "#00a6dd",
     contenu: `
         <div class="referent">
-            <img src="a.png" alt="Noël Joly">
+            <img src="b.png" alt="Noël Joly">
             <h2>Noël Joly</h2>
             <p>
                 <a href="mailto:Referentsecteur3.Haut.Penestin@gmail.com">
@@ -665,7 +785,7 @@ const secteurs = {
     couleur: "#f08ea1",
     contenu: `
         <div class="referent">
-            <img src="b.png" alt="Noël Joly">
+            <img src="a.png" alt="Noël Joly">
             <h2>Noël Joly</h2>
             <p>
                 <a href="mailto:Referentsecteur5.Kerseguin.Loscolo@gmail.com">
@@ -681,7 +801,7 @@ const secteurs = {
     couleur: "#B08BF4",
     contenu: `
         <div class="referent">
-            <img src="a.png" alt="Noël Joly">
+            <img src="b.png" alt="Noël Joly">
             <h2>Noël Joly</h2>
             <p>
                 <a href="mailto:Referentsecteur6.Val-Couarne@gmail.com">
