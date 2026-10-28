@@ -66,7 +66,7 @@ header p {
 
 .carte {
     flex: 1;
-    min-width: 400px;
+    min-width: 700px;
     max-width: 780px;
 }
 
@@ -401,17 +401,29 @@ header p {
                 rgba(0,0,0,0.22)
             );
     }
+/* =====================================================
+   style logo
+   ===================================================== */
 
 }
-
+.logo-penestin{
+    display:block;
+    width:180px;
+    height:auto;
+    margin:0 auto 15px auto;
+    background:white;
+    padding:5px;
+    border-radius:5px;
+}
 </style>
 </head>
-
-
 <body>
 
-
 <header>
+
+    <img src="LOGPENESTIN-180-1k.png"
+         alt="Ville de Pénestin"
+         class="logo-penestin">
 
     <h1>Les Référents de secteurs de Pénestin</h1>
 
@@ -435,6 +447,7 @@ Vous souhaitez prendre contact avec votre référent de quartier ? Trouvez leur 
  </p>
  
 </header>
+
 
 
 <main class="carte-container">
@@ -675,51 +688,66 @@ Vous souhaitez prendre contact avec votre référent de quartier ? Trouvez leur 
 </p>
 
     <div class="bandeau-item">
-        <strong>Secteur 1 (Tréhiguier)</strong><br>
-        <a href="mailto:Referentsecteur1.Trehiguier@gmail.com">
-        Referentsecteur1.Trehiguier@gmail.com
+        <strong>Coordination des Référents</strong><br>
+        <a href="mailto:ref@vivrepenestin.fr">
+        ref@vivrepenestin.fr
         </a><br>
-        Albert‑Jacques Lebreu
+        Jean Paul Tual
+    </div>
+
+
+
+
+
+</p>
+
+    <div class="bandeau-item">
+        <strong>Secteur 1 (Tréhiguier)</strong><br>
+        <a href="mailto:rs1@vivrepenestin.fr">
+        rs1@vivrepenestin.fr
+        </a><br>
+        Guidet François
     </div>
 
     <div class="bandeau-item">
         <strong>Secteur 2 (Centre Bourg)</strong><br>
-        <a href="mailto:Referentsecteur2.Centre.bourg@gmail.com">
-        Referentsecteur2.Centre.bourg@gmail.com
+        <a href="mailto:rs2@vivrepenestin.fr">
+        rs2@vivrepenestin.fr
         </a><br>
-        Albert‑Jacques Lebreu
+        Dréno Michel
+        Roussel Patricia
     </div>
 
     <div class="bandeau-item">
         <strong>Secteur 3 (Haut Pénestin)</strong><br>
-        <a href="mailto:Referentsecteur3.Haut.Penestin@gmail.com">
-        Referentsecteur3.Haut.Penestin@gmail.com
+        <a href="mailto:rs3@vivrepenestin.fr">
+        rs3@vivrepenestin.fr
         </a><br>
-        Albert‑Jacques Lebreu
+        Bernard Philippe
     </div>
 
     <div class="bandeau-item">
         <strong>Secteur 4 (Poudrantais)</strong><br>
-        <a href="mailto:Referentsecteur4.Poudrantais@gmail.com">
-        Referentsecteur4.Poudrantais@gmail.com
+        <a href="mailto:rs4@vivrepenestin.fr">
+        rs4@vivrepenestin.fr
         </a><br>
-        Albert‑Jacques Lebreu
+       Merel Maryse
     </div>
 
     <div class="bandeau-item">
         <strong>Secteur 5 (Kerseguin-Loscolo)</strong><br>
-        <a href="mailto:Referentsecteur5.Kerseguin.Loscolo@gmail.com">
-        Referentsecteur5.Kerseguin.Loscolo@gmail.com
+        <a href="mailto:rs5@vivrepenestin.fr">
+        rs5@vivrepenestin.fr
         </a><br>
-        Albert‑Jacques Lebreu
+        Jégou Marie-France
     </div>
 
     <div class="bandeau-item">
         <strong>Secteur 6 (Val-Couarne)</strong><br>
-        <a href="mailto:Referentsecteur6.Val-Couarne@gmail.com">
-        Referentsecteur6.Val-Couarne@gmail.com
+        <a href="mailto:rs6@vivrepenestin.fr">
+        rs6@vivrepenestin.fr
         </a><br>
-        Albert‑Jacques Lebreu
+        Ranseau Ludovic
     </div>
 
 </aside>
@@ -741,11 +769,11 @@ const secteurs = {
     couleur: "#f28530",
     contenu: `
         <div class="referent">
-            <img src="b.png" alt="Noël Joly">
-              <h2>Noël Joly</h2>
+            <img src="a.png" alt="Noël Joly">
+              <h2>Guidet François</h2>
             <p>
-                <a href="mailto:Referentsecteur1.Trehiguier@gmail.com">
-                    Referentsecteur1.Trehiguier@gmail.com
+                <a href="mailto:rs1@vivrepenestin.fr">
+                    rs1@vivrepenestin.fr
                 </a>
             </p>
         </div>
@@ -759,13 +787,13 @@ const secteurs = {
     contenu: `
         <div class="referent">
             <img src="a.png" alt="Noël Joly">
-              <h2>Noël Joly</h2>
+              <h2>Dréno Michel</h2>
           
               <img src="b.png" alt="Noël Joly">
-              <h2>Noël Joly</h2>
+              <h2>Roussel Patricia</h2>
             <p>
-                <a href="mailto:Referentsecteur2.Centre.bourg@gmail.com">
-                    Referentsecteur2.Centre.bourg@gmail.com
+                <a href="mailto:rs2@vivrepenestin.fr">
+                    rs2@vivrepenestin.fr
                 </a>
             </p>
         </div>        `
@@ -777,11 +805,11 @@ const secteurs = {
     couleur: "#00a6dd",
     contenu: `
         <div class="referent">
-            <img src="b.png" alt="Noël Joly">
-            <h2>Noël Joly</h2>
+            <img src="a.png" alt="Noël Joly">
+            <h2>Bernard Philippe</h2>
             <p>
-                <a href="mailto:Referentsecteur3.Haut.Penestin@gmail.com">
-                    Referentsecteur3.Haut.Penestin@gmail.com
+                <a href="mailto:rs3@vivrepenestin.fr">
+                    rs3@vivrepenestin.fr
                 </a>
             </p>
         </div>       
@@ -794,11 +822,11 @@ const secteurs = {
     couleur: "#ffef2a",
     contenu: `
         <div class="referent">
-            <img src="a.png" alt="Noël Joly">
-            <h2>Noël Joly</h2>
+            <img src="b.png" alt="Noël Joly">
+            <h2>Merel Maryse</h2>
             <p>
-                <a href="mailto:Referentsecteur4.Poudrantais@gmail.com">
-                    Referentsecteur4.Poudrantais@gmail.com
+                <a href="mailto:rs4@vivrepenestin.fr">
+                    rs4@vivrepenestin.fr
                 </a>
             </p>
         </div>  
@@ -811,11 +839,11 @@ const secteurs = {
     couleur: "#f08ea1",
     contenu: `
         <div class="referent">
-            <img src="a.png" alt="Noël Joly">
-            <h2>Noël Joly</h2>
+            <img src="b.png" alt="Noël Joly">
+            <h2>Jégou Marie-France</h2>
             <p>
-                <a href="mailto:Referentsecteur5.Kerseguin.Loscolo@gmail.com">
-                    Referentsecteur5.Kerseguin.Loscolo@gmail.com
+                <a href="mailto:rs5@vivrepenestin.fr">
+                    rs5@vivrepenestin.fr
                 </a>
             </p>
         </div>          `
@@ -827,11 +855,11 @@ const secteurs = {
     couleur: "#B08BF4",
     contenu: `
         <div class="referent">
-            <img src="b.png" alt="Noël Joly">
-            <h2>Noël Joly</h2>
+            <img src="a.png" alt="Noël Joly">
+            <h2>Ranseau Ludovic</h2>
             <p>
-                <a href="mailto:Referentsecteur6.Val-Couarne@gmail.com">
-                    Referentsecteur6.Val-Couarne@gmail.com
+                <a href="mailto:rs6@vivrepenestin.fr">
+                    rs6@vivrepenestin.fr
                 </a>
             </p>
         </div>  
