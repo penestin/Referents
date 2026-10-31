@@ -68,9 +68,8 @@ header p {
    ===================================================== */
 
 .carte {
-    flex: 1;
-    min-width: 700px;
-    max-width: 780px;
+    flex: 0 0 480px;
+    max-width: 480px;
 }
 
 .carte svg {
@@ -207,19 +206,56 @@ header p {
    ===================================================== */
 
 .fiche {
-    width: 300px;
-    min-height: 480px;
+    width: 450px;
+    min-height: 400px;
 
-    padding: 10px;
+    padding:20px;
 
-    background: #d9d9d9;
+    background:#d9d9d9;
 
     box-shadow:
-        0 8px 24px
-        rgba(0,0,0,0.15);
+        0 8px 24px rgba(0,0,0,0.15);
+}
 
-    transition:
-        background-color 0.3s ease;
+.photo-groupe{
+    width:100%;
+    max-width:650px;
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    margin:0 auto 25px auto;
+    display:block;
+
+    border:4px solid rgba(255,255,255,.8);
+
+    box-shadow:0 6px 16px rgba(0,0,0,.25);
+}
+.photo-individuelle{
+    width:220px;
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    margin:auto;
+    display:block;
+}
+
+.photo-groupe{
+    width:100%;
+
+    max-width:650px;
+
+    height:auto;
+
+    border-radius:12px;
+
+    display:block;
+    margin:auto;
 }
 
 .fiche h2 {
@@ -251,15 +287,6 @@ header p {
 /* =====================================================
    reduction des photos
    ===================================================== */
-.referent img{
-    width:200px;
-    height:200px;
-    object-fit:cover;
-    border-radius:50%;
-    margin-bottom:15px;
-    border:4px solid rgba(255,255,255,0.8);
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
-}
 
 .referent h3{
     margin:10px 0 5px;
@@ -427,6 +454,11 @@ header p {
     <img src="logo-vivrepenestin2.png"
          alt="Ville de Pénestin"
          class="logo-penestin">
+         
+         <img
+    class="photo-groupe"
+    src="secteur1-groupe.png"
+    alt="Référents du secteur 1">
 
     <h1>Les Référents de secteurs de Pénestin</h1>
 
@@ -770,17 +802,25 @@ const secteurs = {
     titre: "Secteur 1",
     nom: "Tréhiguier",
     couleur: "#f28530",
-    contenu: `
-        <div class="referent">
-            <img src="a.png" alt="Noël Joly">
-              <h2>Guidet François</h2>
-            <p>
-                <a href="mailto:rs1@vivrepenestin.fr">
-                    rs1@vivrepenestin.fr
-                </a>
-            </p>
-        </div>
-    `
+   contenu: `
+<div class="referent">
+
+    <img class="photo-groupe"
+         src="secteur1-groupe.png"
+         alt="Référents du secteur">
+
+    <h2>Guidet François</h2>
+
+    <p>
+        Référent du secteur Tréhiguier
+    </p>
+
+    <a href="mailto:rs1@vivrepenestin.fr">
+       rs1@vivrepenestin.fr
+    </a>
+
+</div>
+`
 }, 
 
     2: {
@@ -973,7 +1013,38 @@ function afficherSecteur(numero) {
         .getElementById("contenu")
         .innerHTML =
         secteur.contenu;
+/* Détection automatique des photos */
 
+document.querySelectorAll("#contenu img").forEach(img => {
+
+    if (img.complete) {
+        appliquerStyle(img);
+    } else {
+        img.onload = function () {
+            appliquerStyle(this);
+        };
+    }
+
+});
+
+function appliquerStyle(img){
+
+    img.classList.remove(
+        "photo-groupe",
+        "photo-individuelle"
+    );
+
+    if(img.naturalWidth > img.naturalHeight){
+
+        img.classList.add("photo-groupe");
+
+    }else{
+
+        img.classList.add("photo-individuelle");
+
+    }
+
+}
 
     /* COULEUR FICHE */
 
