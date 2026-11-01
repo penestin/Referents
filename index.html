@@ -248,28 +248,39 @@ header p {
     margin:auto;
     display:block;
 }
-
-.photo-groupe{
-    width:100%;
-    max-width:650px;
-    height:auto;      /* ← annule height:320px */
-    border-radius:12px;
-    display:block;
-    margin:auto;
-}
-
+.photo-groupe,
 .photo-individuelle{
-    width:200px;
-    height:200px;
-    object-fit:cover;
-    border-radius:50%;
-    margin:auto;
     display:block;
+    max-width:100%;
+    width:auto;
+    height:auto;
+
+    margin:auto;
+    border-radius:12px;
+
+    box-shadow:0 6px 16px rgba(0,0,0,.25);
 }
-`
-.fiche h2 {
-    margin-top: 0;
-    font-size: 30px;
+.referent{
+    text-align:center;
+}
+
+.referent img{
+    max-width:100%;
+    height:auto;
+}
+
+.photo-groupe,
+.photo-individuelle{
+    max-width:100%;
+    max-height:250px;
+
+    width:auto;
+    height:auto;
+
+    display:block;
+    margin:auto;
+
+    border-radius:12px;
 }
 
 .fiche .secteur {
@@ -290,8 +301,20 @@ header p {
 .message {
     margin-top: 50px;
 }
+/* =====================================================
+   typo noms des référents dans panneaux colorés
+   ===================================================== */
 .referent{
     text-align:center;
+    font-size:22px;
+}
+.referent Pc{
+    font-size:26px;
+    margin:10px 0;
+}
+.referent h2{
+    font-size:20px;
+    margin:10px 0;
 }
 /* =====================================================
    reduction des photos
@@ -324,29 +347,53 @@ header p {
    ===================================================== */
    
    .bandeau-secteurs{
-    width:420px;
-    max-width:90vw;
+    width:100%;
+    margin-top:30px;
+
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(200px,1fr));
+
+    gap:20px;
+
+    background:none;
+    box-shadow:none;
+    padding:0;
 }
+
+
    /* =====================================================
    BANDEAU SECTEURS
    ===================================================== */
 
 .bandeau-secteurs{
-    width:220px;
-    flex-shrink:0;
-    background:#ffffff;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
-    font-size:14px;
-    line-height:1.4;
-}
+    width:80%;
+    margin-top:20px;
 
-.bandeau-secteurs h3{
-    margin-top:0;
-    color:#205ba4;
-    border-bottom:2px solid #205ba4;
-    padding-bottom:10px;
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+
+    gap:10px;
+
+    background:none;
+    box-shadow:none;
+    padding:0;
+}
+.bandeau-secteurs h3,
+.pdf-link{
+    grid-column:1 / -1;
+}
+.bandeau-item{
+    background:#fff;
+
+    padding:15px;
+    border-radius:12px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+    margin:0;
+    
 }
 .pdf-link{
     text-align:center;
@@ -370,11 +417,19 @@ header p {
 }
 
 .bandeau-item{
-    margin-bottom:15px;
-    padding-bottom:12px;
-    border-bottom:1px solid #ddd;
-}
+    background:white;
 
+    border-radius:12px;
+    padding:15px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+    border:none;
+}
+.bandeau-secteurs h3,
+.pdf-link{
+    grid-column:1 / -1;
+}
 .bandeau-item a{
     display:block;
     max-width:100%;
@@ -720,34 +775,20 @@ Vous souhaitez prendre contact avec votre référent de quartier ? Trouvez leur 
 
 <aside class="bandeau-secteurs">
 
-    <h3>Comptes Secteurs</h3>
+ 
     <p class="pdf-link">
     <a href="https://penestin.github.io/Referents/cartessecteurs.pdf"
        target="_blank">
        📄 Carte des secteurs (PDF)
     </a>
 </p>
-
-    <div class="bandeau-item">
-        <strong>Coordination des Référents</strong><br>
-        <a href="mailto:ref@vivrepenestin.fr">
-        ref@vivrepenestin.fr
-        </a><br>
-        Jean Paul Tual
-    </div>
-
-
-
-
-
-</p>
-
     <div class="bandeau-item">
         <strong>Secteur 1 (Tréhiguier)</strong><br>
         <a href="mailto:rs1@vivrepenestin.fr">
         rs1@vivrepenestin.fr
         </a><br>
-        Guidet François
+        Guidet François<br>     
+        MINSTER Françoise
     </div>
 
     <div class="bandeau-item">
@@ -755,8 +796,12 @@ Vous souhaitez prendre contact avec votre référent de quartier ? Trouvez leur 
         <a href="mailto:rs2@vivrepenestin.fr">
         rs2@vivrepenestin.fr
         </a><br>
-        Dréno Michel
-        Roussel Patricia
+DRENO Michel<br>
+GERARD Brigitte<br>
+LETIRAND isabelle<br>
+ROUSSEL Patricia<br>
+TIZON Marie-Noëlle
+
     </div>
 
     <div class="bandeau-item">
@@ -764,7 +809,10 @@ Vous souhaitez prendre contact avec votre référent de quartier ? Trouvez leur 
         <a href="mailto:rs3@vivrepenestin.fr">
         rs3@vivrepenestin.fr
         </a><br>
-        Bernard Philippe
+        BERNARD Philippe<br>
+BOEFFARD Daniel<br>
+RELIN Philippe
+
     </div>
 
     <div class="bandeau-item">
@@ -780,7 +828,10 @@ Vous souhaitez prendre contact avec votre référent de quartier ? Trouvez leur 
         <a href="mailto:rs5@vivrepenestin.fr">
         rs5@vivrepenestin.fr
         </a><br>
-        Jégou Marie-France
+        BANDECCHI Rose<br>
+BAUDET Eric<br>
+JEGOU Marie-France<br>
+RIPOCHE Laurence
     </div>
 
     <div class="bandeau-item">
@@ -788,7 +839,11 @@ Vous souhaitez prendre contact avec votre référent de quartier ? Trouvez leur 
         <a href="mailto:rs6@vivrepenestin.fr">
         rs6@vivrepenestin.fr
         </a><br>
-        Ranseau Ludovic
+       BARTOLI Stéphane<br>
+FREYERMUTH Hubert<br>
+MARINI jean<br>
+ROTUREAU Quentin<br>
+VAUGRENARD Jacqueline<br>
     </div>
 
 </aside>
@@ -800,7 +855,7 @@ Vous souhaitez prendre contact avec votre référent de quartier ? Trouvez leur 
 <script>
 
 /* =====================================================
-   DONNEES
+   DONNEES panneaux de couleurs
    ===================================================== */
 
 const secteurs = {
@@ -808,44 +863,38 @@ const secteurs = {
     titre: "Secteur 1",
     nom: "Tréhiguier",
     couleur: "#f28530",
-   contenu: `
-<div class="referent">
-
-    <img class="photo-groupe"
-         src="secteur1-groupe.png"
-         alt="Référents du secteur">
-
-    <h2>Guidet François</h2>
-
-    <p>
-        Référent du secteur Tréhiguier
-    </p>
-
+    contenu: `
+        <div class="referent">
+            <img src="photoS1-1H1F.png" alt="Noël Joly">
+    <h2>GUIDET François<br>
+    MINSTER Françoise
+<p>
     <a href="mailto:rs1@vivrepenestin.fr">
        rs1@vivrepenestin.fr
     </a>
-
+  </p>
 </div>
 `
 }, 
-
     2: {
     titre: "Secteur 2",
     nom: "Centre Bourg",
     couleur: "#40b150",
     contenu: `
         <div class="referent">
-            <img src="a.png" alt="Noël Joly">
-              <h2>Dréno Michel</h2>
-          
-              <img src="b.png" alt="Noël Joly">
-              <h2>Roussel Patricia</h2>
+            <img src="photoS2-1H4F.png" alt="Noël Joly">
+          <h2>DRENO Michel<br>
+              GERARD Brigitte<br>
+              LETIRAND isabelle<br>
+              ROUSSEL Patricia<br>
+              TIZON Marie-Noëlle
             <p>
                 <a href="mailto:rs2@vivrepenestin.fr">
                     rs2@vivrepenestin.fr
                 </a>
             </p>
-        </div>        `
+        </div> 
+     `
     },
 
     3: {
@@ -854,8 +903,11 @@ const secteurs = {
     couleur: "#00a6dd",
     contenu: `
         <div class="referent">
-            <img src="a.png" alt="Noël Joly">
-            <h2>Bernard Philippe</h2>
+            <img src="photoS3-3H.png" alt="Noël Joly">
+            <h2>BERNARD Philippe<br>
+                BOEFFARD Daniel<br>
+                RELIN Philippe
+
             <p>
                 <a href="mailto:rs3@vivrepenestin.fr">
                     rs3@vivrepenestin.fr
@@ -871,7 +923,7 @@ const secteurs = {
     couleur: "#ffef2a",
     contenu: `
         <div class="referent">
-            <img src="b.png" alt="Noël Joly">
+            <img src="photoS4-1F.png" alt="Noël Joly">
             <h2>Merel Maryse</h2>
             <p>
                 <a href="mailto:rs4@vivrepenestin.fr">
@@ -888,8 +940,11 @@ const secteurs = {
     couleur: "#f08ea1",
     contenu: `
         <div class="referent">
-            <img src="b.png" alt="Noël Joly">
-            <h2>Jégou Marie-France</h2>
+            <img src="photoS5-1F1H2F.png" alt="Noël Joly">
+            <h2>BANDECCHI Rose<br>
+                BAUDET Eric<br>
+                JEGOU Marie-France<br>
+                RIPOCHE Laurence
             <p>
                 <a href="mailto:rs5@vivrepenestin.fr">
                     rs5@vivrepenestin.fr
@@ -904,8 +959,12 @@ const secteurs = {
     couleur: "#B08BF4",
     contenu: `
         <div class="referent">
-            <img src="a.png" alt="Noël Joly">
-            <h2>Ranseau Ludovic</h2>
+            <img src="photoS6-4H2F.png" alt="Noël Joly">
+            <h2>BARTOLI Stéphane<br>
+                FREYERMUTH Hubert<br>
+                MARINI jean<br>
+                ROTUREAU Quentin<br>
+                VAUGRENARD Jacqueline
             <p>
                 <a href="mailto:rs6@vivrepenestin.fr">
                     rs6@vivrepenestin.fr
@@ -1019,6 +1078,10 @@ function afficherSecteur(numero) {
         .getElementById("contenu")
         .innerHTML =
         secteur.contenu;
+
+
+
+
 /* Détection automatique des photos */
 
 document.querySelectorAll("#contenu img").forEach(img => {
@@ -1051,6 +1114,8 @@ function appliquerStyle(img){
     }
 
 }
+   
+ 
 
     /* COULEUR FICHE */
 
